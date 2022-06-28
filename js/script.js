@@ -10,15 +10,20 @@ ctx.strokeStyle = "white";
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-const p = new Pendulum(new Point(canvas.width / 2, 20 + 100), 20, 0, 100);
-p.draw(ctx);
+const pA = new Pendulum(
+    new Point(canvas.width / 2, 20 + 100),
+    10,
+    Math.PI / 2,
+    200
+);
+const pB = new Pendulum(new Point(pA.massPoint.x, pA.massPoint.y), 10, 0, 200);
 
 const animate = () => {
-    p.draw(ctx);
+    pA.draw(ctx);
+    pB.draw(ctx);
     requestAnimationFrame(animate);
 };
 
-console.log(p);
 animate();
 
 export { ctx };

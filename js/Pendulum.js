@@ -17,6 +17,8 @@ class Pendulum {
         ctx.beginPath();
         ctx.moveTo(this.cordPoint.x, this.cordPoint.y);
         ctx.lineTo(this.massPoint.x, this.massPoint.y);
+        ctx.stroke();
+        ctx.beginPath();
         ctx.arc(
             this.massPoint.x,
             this.massPoint.y,
