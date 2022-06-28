@@ -10,8 +10,9 @@ class Pendulum {
         };
         this.radius = radius;
         this.angle = angle;
+        this.length = length;
     }
-    draw(ctx) {
+    draw() {
         ctx.fillStyle = "white";
         ctx.strokeStyle = "white";
         ctx.beginPath();
@@ -29,6 +30,13 @@ class Pendulum {
         ctx.stroke();
         ctx.fill();
         ctx.closePath();
+    }
+    update() {
+        this.massPoint.x =
+            this.cordPoint.x + this.length * Math.cos(this.angle);
+        this.massPoint.y =
+            this.cordPoint.y + this.length * Math.sin(this.angle);
+        this.draw(ctx);
     }
 }
 
